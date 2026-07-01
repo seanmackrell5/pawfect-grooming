@@ -684,20 +684,37 @@
   </footer>
 
   <script>
-    document.getElementById('booking-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const dogName = this.dogName.value;
-      const ownerName = this.ownerName.value;
-      const service = this.service.value;
-      const date = new Date(this.date.value).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' });
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCmMFG3sA_S1APg3eY8OHpU6ytA9o5e4-AiM0zTxSJaGu4jb56soYIQGJh9zoLHo-3/exec";
 
-      document.getElementById('ty-message').textContent =
-        `Thanks ${ownerName}! We'll confirm ${dogName}'s ${service.split('—')[0].trim()} appointment for ${date} within 24 hours.`;
+  document.getElementById('booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      this.style.display = 'none';
-      document.getElementById('thank-you').style.display = 'block';
+    const data = {
+      dogName: this.dogName.value,
+      ownerName: this.ownerName.value,
+      email: this.email.value,
+      phone: this.phone.value,
+      service: this.service.value,
+      date: this.date.value
+    };
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
     });
-  </script>
+
+    const service = data.service.split('—')[0].trim();
+    const date = new Date(data.date + "T00:00:00").toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' });
+
+    document.getElementById('ty-message').textContent =
+      `Thanks ${data.ownerName}! We'll confirm ${data.dogName}'s ${service} appointment for ${date} within 24 hours.`;
+
+    this.style.display = 'none';
+    document.getElementById('thank-you').style.display = 'block';
+  });
+</script>
 
 </body>
 </html>
