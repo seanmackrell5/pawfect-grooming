@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pawfect Grooming — Toronto's Best Dog Groomers</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,6 +78,20 @@
       gap: 32px;
       list-style: none;
     }
+<ul class="nav-links">
+  <li><a href="#services">Services</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="shop.html">Shop</a></li>
+  <li><a href="#book" class="btn-nav">Book Now</a></li>
+</ul>
+
+
+<ul class="nav-links">
+  <li><a href="#services">Services</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#book" class="btn-nav">Book Now</a></li>
+</ul>
+
 
     .nav-links a {
       text-decoration: none;
@@ -227,9 +240,6 @@
 
     .badge-text { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.3; }
     .badge-text span { color: var(--muted); font-weight: 400; }
-
-    /* ── CAROUSEL ── */
-    #carousel-track::-webkit-scrollbar { display: none; }
 
     /* ── SERVICES ── */
     #services {
@@ -516,19 +526,38 @@
     }
   </style>
 </head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>" />
 <body>
 
   <!-- NAV -->
   <nav>
     <a class="logo" href="#">
-      <div class="logo-paw">🐾</div>
+  <div class="logo-paw">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="7" cy="9" r="1.8"/>
+      <circle cx="11" cy="6.5" r="1.8"/>
+      <circle cx="15" cy="6.5" r="1.8"/>
+      <circle cx="19" cy="9" r="1.8"/>
+      <path d="M13 12c-2.8 0-5 2.2-5.5 4.3-.4 1.7 1 3.2 2.7 3.2 1 0 1.9-.5 2.8-.5s1.8.5 2.8.5c1.7 0 3.1-1.5 2.7-3.2C17 14.2 14.8 12 13 12z"/>
+    </svg>
+  </div>
+  <span class="logo-text">Pawfect Grooming</span>
+</a>
+      <div class="logo-paw">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="6" cy="10" rx="2" ry="2.8"/>
+    <ellipse cx="10.5" cy="7" rx="2" ry="2.8"/>
+    <ellipse cx="15" cy="7" rx="2" ry="2.8"/>
+    <ellipse cx="18.5" cy="10.5" rx="2" ry="2.8"/>
+    <path d="M12 12c-2.5 0-4.5 2-5 4-.4 1.6.8 3 2.5 3 .9 0 1.7-.4 2.5-.4s1.6.4 2.5.4c1.7 0 2.9-1.4 2.5-3-.5-2-2.5-4-5-4z"/>
+  </svg>
+</div>
       <span class="logo-text">Pawfect Grooming</span>
     </a>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="shop.html">Shop</a></li>
       <li><a href="#book" class="btn-nav">Book Now</a></li>
     </ul>
   </nav>
@@ -554,39 +583,58 @@
       </div>
     </div>
   </section>
-
   <!-- HAPPY CUSTOMERS CAROUSEL -->
-  <section style="padding: 60px 0; background: var(--cream-dark); overflow: hidden;">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 0 5%;">
-      <div class="section-header" style="margin-bottom: 36px;">
-        <div class="section-eyebrow">Real Results</div>
-        <h2>Some of Our Happy Customers</h2>
+<section style="padding: 60px 0; background: var(--cream-dark); overflow: hidden;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 5%;">
+    <div class="section-header" style="margin-bottom: 36px;">
+      <div class="section-eyebrow">Real Results</div>
+      <h2>Some of Our Happy Customers</h2>
+    </div>
+  </div>
+
+  <div style="position: relative;">
+    <div id="carousel-track" style="
+      display: flex;
+      gap: 16px;
+      padding: 0 5%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    ">
+      <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600" alt="Pomeranian after grooming" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
+        <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600" alt="Dog being groomed" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
+        <img src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?w=600" alt="Schnauzer" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
+        <img src="https://images.unsplash.com/photo-1558929996-da64ba858215?w=600" alt="Happy dogs" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
+        <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=600" alt="Dog in hoodie" style="width:100%; height:100%; object-fit:cover;" />
       </div>
     </div>
 
-    <div style="position: relative;">
-      <div id="carousel-track" style="display: flex; gap: 16px; padding: 0 5%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
-        <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
-          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600" alt="Pomeranian after grooming" style="width:100%; height:100%; object-fit:cover;" />
-        </div>
-        <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
-          <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600" alt="Dog being groomed" style="width:100%; height:100%; object-fit:cover;" />
-        </div>
-        <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
-          <img src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?w=600" alt="Schnauzer" style="width:100%; height:100%; object-fit:cover;" />
-        </div>
-        <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
-          <img src="https://images.unsplash.com/photo-1558929996-da64ba858215?w=600" alt="Happy dogs" style="width:100%; height:100%; object-fit:cover;" />
-        </div>
-        <div style="flex: 0 0 320px; height: 320px; border-radius: 20px; overflow: hidden; scroll-snap-align: start;">
-          <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=600" alt="Dog in hoodie" style="width:100%; height:100%; object-fit:cover;" />
-        </div>
-      </div>
-
-      <button onclick="document.getElementById('carousel-track').scrollBy({left: -340, behavior: 'smooth'})" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: none; background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.15); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;">‹</button>
-      <button onclick="document.getElementById('carousel-track').scrollBy({left: 340, behavior: 'smooth'})" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: none; background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.15); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;">›</button>
-    </div>
-  </section>
+    <!-- Arrows -->
+    <button onclick="document.getElementById('carousel-track').scrollBy({left: -340, behavior: 'smooth'})" style="
+      position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%; border: none;
+      background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    ">‹</button>
+    <button onclick="document.getElementById('carousel-track').scrollBy({left: 340, behavior: 'smooth'})" style="
+      position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%; border: none;
+      background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    ">›</button>
+  </div>
+</section>
 
   <!-- SERVICES -->
   <section id="services">
@@ -675,7 +723,7 @@
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input type="tel" name="phone" placeholder="416-555-0100" required />
+            <input type="tel" name="phone" placeholder="416-555-0100" required />
             </div>
           </div>
           <div class="form-row">
@@ -705,6 +753,32 @@
       </div>
     </div>
   </section>
+<!-- HAPPY CUSTOMERS -->
+<section style="padding: 80px 5%; background: var(--cream);">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-header">
+      <div class="section-eyebrow">Real Results</div>
+      <h2>Some of Our Happy Customers</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 40px;">
+      <div style="border-radius: 16px; overflow: hidden; aspect-ratio: 1;">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600" alt="Happy dog after grooming" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="border-radius: 16px; overflow: hidden; aspect-ratio: 1;">
+        <img src="https://images.unsplash.com/photo-1629740067901-c0a370c4c6a7?w=600" alt="Dog being groomed" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="border-radius: 16px; overflow: hidden; aspect-ratio: 1;">
+        <img src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?w=600"
+      </div>
+      <div style="border-radius: 16px; overflow: hidden; aspect-ratio: 1;">
+        <img src="https://images.unsplash.com/photo-1558929996-da64ba858215?w=600" alt="Happy dog" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="border-radius: 16px; overflow: hidden; aspect-ratio: 1;">
+        <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=600" alt="Dog in hoodie" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer>
@@ -722,37 +796,37 @@
   </footer>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCmMFG3sA_S1APg3eY8OHpU6ytA9o5e4-AiM0zTxSJaGu4jb56soYIQGJh9zoLHo-3/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCmMFG3sA_S1APg3eY8OHpU6ytA9o5e4-AiM0zTxSJaGu4jb56soYIQGJh9zoLHo-3/exec";
 
-    document.getElementById('booking-form').addEventListener('submit', function(e) {
-      e.preventDefault();
+  document.getElementById('booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      const data = {
-        dogName: this.dogName.value,
-        ownerName: this.ownerName.value,
-        email: this.email.value,
-        phone: this.phone.value,
-        service: this.service.value,
-        date: this.date.value
-      };
+    const data = {
+      dogName: this.dogName.value,
+      ownerName: this.ownerName.value,
+      email: this.email.value,
+      phone: this.phone.value,
+      service: this.service.value,
+      date: this.date.value
+    };
 
-      fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-
-      const service = data.service.split('—')[0].trim();
-      const date = new Date(data.date + "T00:00:00").toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' });
-
-      document.getElementById('ty-message').textContent =
-        `Thanks ${data.ownerName}! We'll confirm ${data.dogName}'s ${service} appointment for ${date} within 24 hours.`;
-
-      this.style.display = 'none';
-      document.getElementById('thank-you').style.display = 'block';
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
     });
-  </script>
+
+    const service = data.service.split('—')[0].trim();
+    const date = new Date(data.date + "T00:00:00").toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' });
+
+    document.getElementById('ty-message').textContent =
+      `Thanks ${data.ownerName}! We'll confirm ${data.dogName}'s ${service} appointment for ${date} within 24 hours.`;
+
+    this.style.display = 'none';
+    document.getElementById('thank-you').style.display = 'block';
+  });
+</script>
 
 </body>
 </html>
