@@ -32,65 +32,54 @@
       line-height: 1.6;
     }
 
-    /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
       background: rgba(247, 243, 236, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #e0dbd0;
       padding: 0 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       height: 68px;
     }
 
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-paw { width: 38px; height: 38px; background: var(--green); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .logo-paw { width: 38px; height: 38px; background: var(--green); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .logo-text { font-family: 'Fraunces', serif; font-size: 20px; color: var(--green); font-weight: 700; letter-spacing: -0.3px; }
 
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--green); }
 
-    /* Cart button */
     .cart-btn {
       position: relative;
       background: var(--green);
       color: white !important;
-      padding: 9px 18px 9px 16px;
+      padding: 9px 18px 9px 14px;
       border-radius: 50px;
       display: flex; align-items: center; gap: 8px;
-      cursor: pointer;
-      border: none;
+      cursor: pointer; border: none;
       font-size: 14px; font-weight: 600;
       font-family: 'Inter', sans-serif;
       transition: background 0.2s;
     }
     .cart-btn:hover { background: var(--green-light); }
+    .cart-btn svg { width: 18px; height: 18px; }
     .cart-count {
-      background: var(--amber);
-      color: white;
-      font-size: 11px;
-      font-weight: 700;
+      background: var(--amber); color: white;
+      font-size: 11px; font-weight: 700;
       min-width: 20px; height: 20px;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       padding: 0 5px;
     }
 
-    /* ── HEADER ── */
     .shop-header { text-align: center; padding: 60px 5% 40px; }
     .shop-header .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
     .shop-header h1 { font-family: 'Fraunces', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 700; letter-spacing: -1px; margin-bottom: 12px; }
     .shop-header p { color: var(--muted); font-size: 16px; max-width: 480px; margin: 0 auto; }
 
-    /* ── PRODUCTS ── */
     .products {
-      max-width: 1100px;
-      margin: 0 auto;
+      max-width: 1100px; margin: 0 auto;
       padding: 20px 5% 80px;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -98,18 +87,14 @@
     }
 
     .product-card {
-      background: white;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid #e8e3da;
+      background: white; border-radius: var(--radius);
+      overflow: hidden; border: 1px solid #e8e3da;
       transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column;
     }
     .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
 
     .product-img { width: 100%; height: 200px; object-fit: cover; background: var(--green-pale); }
-
     .product-info { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
     .product-info h3 { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; margin-bottom: 4px; }
     .product-info p { font-size: 13px; color: var(--muted); margin-bottom: 16px; flex: 1; }
@@ -118,51 +103,32 @@
     .product-price { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--green); }
 
     .add-btn {
-      background: var(--green-pale);
-      color: var(--green);
-      border: none;
-      padding: 9px 16px;
-      border-radius: 50px;
-      font-size: 13px; font-weight: 600;
-      cursor: pointer;
+      background: var(--green-pale); color: var(--green);
+      border: none; padding: 9px 16px; border-radius: 50px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
       font-family: 'Inter', sans-serif;
       transition: background 0.2s, color 0.2s;
     }
     .add-btn:hover { background: var(--green); color: white; }
 
-    /* ── CART DRAWER ── */
-    .cart-overlay {
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(3px);
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s;
-      z-index: 200;
-    }
+    .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(3px); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 200; }
     .cart-overlay.open { opacity: 1; pointer-events: auto; }
 
     .cart-drawer {
       position: fixed; top: 0; right: 0;
       width: 400px; max-width: 90vw; height: 100%;
-      background: var(--cream);
-      z-index: 201;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
+      background: var(--cream); z-index: 201;
+      transform: translateX(100%); transition: transform 0.3s ease;
       display: flex; flex-direction: column;
       box-shadow: -8px 0 40px rgba(0,0,0,0.2);
     }
     .cart-drawer.open { transform: translateX(0); }
 
-    .cart-head {
-      padding: 24px;
-      border-bottom: 1px solid #e0dbd0;
-      display: flex; align-items: center; justify-content: space-between;
-    }
+    .cart-head { padding: 24px; border-bottom: 1px solid #e0dbd0; display: flex; align-items: center; justify-content: space-between; }
     .cart-head h2 { font-family: 'Fraunces', serif; font-size: 22px; }
     .cart-close { background: none; border: none; font-size: 26px; cursor: pointer; color: var(--muted); line-height: 1; }
 
     .cart-items { flex: 1; overflow-y: auto; padding: 16px 24px; }
-
     .cart-empty { text-align: center; color: var(--muted); padding: 60px 20px; }
     .cart-empty .emoji { font-size: 40px; margin-bottom: 12px; }
 
@@ -176,7 +142,6 @@
     .qty-btn { width: 24px; height: 24px; border-radius: 6px; border: 1px solid #d0cabd; background: white; cursor: pointer; font-size: 14px; color: var(--text); display: flex; align-items: center; justify-content: center; }
     .qty-btn:hover { border-color: var(--green); color: var(--green); }
     .qty-num { font-size: 14px; font-weight: 600; min-width: 20px; text-align: center; }
-
     .remove-item { background: none; border: none; color: #c0392b; font-size: 11px; cursor: pointer; margin-left: auto; }
 
     .cart-foot { padding: 20px 24px 24px; border-top: 1px solid #e0dbd0; background: var(--cream-dark); }
@@ -184,18 +149,10 @@
     .cart-total span:first-child { font-size: 15px; color: var(--muted); }
     .cart-total span:last-child { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--green); }
 
-    .checkout-btn {
-      width: 100%; padding: 14px;
-      background: var(--green); color: white;
-      border: none; border-radius: 50px;
-      font-size: 15px; font-weight: 600;
-      cursor: pointer; font-family: 'Inter', sans-serif;
-      transition: background 0.2s;
-    }
+    .checkout-btn { width: 100%; padding: 14px; background: var(--green); color: white; border: none; border-radius: 50px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.2s; }
     .checkout-btn:hover { background: var(--green-light); }
     .checkout-btn:disabled { background: #b0b8ac; cursor: not-allowed; }
 
-    /* Checkout form */
     .checkout-form { display: none; }
     .checkout-form.show { display: block; }
     .cf-group { margin-bottom: 12px; }
@@ -203,15 +160,7 @@
     .cf-group input { width: 100%; padding: 10px 12px; border: 1.5px solid #e0dbd0; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; background: white; outline: none; }
     .cf-group input:focus { border-color: var(--green); }
 
-    .cart-toast {
-      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
-      background: var(--green); color: white;
-      padding: 12px 24px; border-radius: 50px;
-      font-size: 14px; font-weight: 600;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-      z-index: 300;
-    }
+    .cart-toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--green); color: white; padding: 12px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.2); transition: transform 0.3s ease; z-index: 300; }
     .cart-toast.show { transform: translateX(-50%) translateY(0); }
 
     @media (max-width: 600px) {
@@ -225,21 +174,33 @@
   <!-- NAV -->
   <nav>
     <a class="logo" href="index.html">
-      <div class="logo-paw">🐾</div>
+      <div class="logo-paw">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="7" cy="9" r="1.8"/>
+          <circle cx="11" cy="6.5" r="1.8"/>
+          <circle cx="15" cy="6.5" r="1.8"/>
+          <circle cx="19" cy="9" r="1.8"/>
+          <path d="M13 12c-2.8 0-5 2.2-5.5 4.3-.4 1.7 1 3.2 2.7 3.2 1 0 1.9-.5 2.8-.5s1.8.5 2.8.5c1.7 0 3.1-1.5 2.7-3.2C17 14.2 14.8 12 13 12z"/>
+        </svg>
+      </div>
       <span class="logo-text">Pawfect Grooming</span>
     </a>
-    <a class="logo" href="#">
-  <div class="logo-paw">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="7" cy="9" r="1.8"/>
-      <circle cx="11" cy="6.5" r="1.8"/>
-      <circle cx="15" cy="6.5" r="1.8"/>
-      <circle cx="19" cy="9" r="1.8"/>
-      <path d="M13 12c-2.8 0-5 2.2-5.5 4.3-.4 1.7 1 3.2 2.7 3.2 1 0 1.9-.5 2.8-.5s1.8.5 2.8.5c1.7 0 3.1-1.5 2.7-3.2C17 14.2 14.8 12 13 12z"/>
-    </svg>
-  </div>
-  <span class="logo-text">Pawfect Grooming</span>
-</a>
+    <ul class="nav-links">
+      <li class="hide-mobile"><a href="index.html">Home</a></li>
+      <li class="hide-mobile"><a href="index.html#services">Services</a></li>
+      <li class="hide-mobile"><a href="index.html#book">Book Now</a></li>
+      <li>
+        <button class="cart-btn" onclick="openCart()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          Cart
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </li>
+    </ul>
   </nav>
 
   <!-- HEADER -->
@@ -265,8 +226,6 @@
         <span>Total</span>
         <span id="cart-total">$0.00</span>
       </div>
-
-      <!-- Checkout form (hidden until "checkout" clicked) -->
       <div class="checkout-form" id="checkout-form">
         <div class="cf-group">
           <label>Your Name</label>
@@ -281,7 +240,6 @@
           <input type="tel" id="co-phone" placeholder="416-555-0100" />
         </div>
       </div>
-
       <button class="checkout-btn" id="checkout-btn" onclick="handleCheckout()" disabled>Checkout</button>
     </div>
   </div>
@@ -289,10 +247,9 @@
   <div class="cart-toast" id="toast">Added to cart 🐾</div>
 
   <script>
-    // ── PASTE YOUR GOOGLE SHEETS URL HERE (same one from your booking form) ──
-    const ORDER_SCRIPT_URL = "const ORDER_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCmMFG3sA_S1APg3eY8OHpU6ytA9o5e4-AiM0zTxSJaGu4jb56soYIQGJh9zoLHo-3/exec";
+    // Same Google Sheets URL as your booking form
+    const ORDER_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCmMFG3sA_S1APg3eY8OHpU6ytA9o5e4-AiM0zTxSJaGu4jb56soYIQGJh9zoLHo-3/exec";
 
-    // ── PRODUCTS ──
     const PRODUCTS = [
       { id: "p1", name: "Oatmeal Dog Shampoo", desc: "Gentle, hypoallergenic, soothes itchy skin.", price: 18, img: "https://images.unsplash.com/photo-1669281392832-9181a2b484af?w=500&auto=format&fit=crop" },
       { id: "p2", name: "Slicker Brush", desc: "Removes loose fur and tangles with ease.", price: 22, img: "https://images.unsplash.com/photo-1591946614720-90a587da4a36?w=500" },
@@ -304,7 +261,6 @@
       { id: "p8", name: "Detangling Spray", desc: "Leaves coat soft, shiny, and knot-free.", price: 16, img: "https://images.unsplash.com/photo-1594149929911-78975a43d4f5?w=500" },
     ];
 
-    // ── CART STATE (persists via localStorage) ──
     let cart = JSON.parse(localStorage.getItem("pawfect_cart") || "[]");
 
     function saveCart() {
@@ -313,7 +269,6 @@
       updateCount();
     }
 
-    // ── RENDER PRODUCTS ──
     function renderProducts() {
       document.getElementById("products").innerHTML = PRODUCTS.map(p => `
         <div class="product-card">
@@ -330,15 +285,10 @@
       `).join("");
     }
 
-    // ── ADD / REMOVE / QTY ──
     function addToCart(id) {
       const existing = cart.find(item => item.id === id);
-      if (existing) {
-        existing.qty++;
-      } else {
-        const product = PRODUCTS.find(p => p.id === id);
-        cart.push({ ...product, qty: 1 });
-      }
+      if (existing) { existing.qty++; }
+      else { const product = PRODUCTS.find(p => p.id === id); cart.push({ ...product, qty: 1 }); }
       saveCart();
       showToast();
     }
@@ -351,16 +301,11 @@
       saveCart();
     }
 
-    function removeItem(id) {
-      cart = cart.filter(i => i.id !== id);
-      saveCart();
-    }
+    function removeItem(id) { cart = cart.filter(i => i.id !== id); saveCart(); }
 
-    // ── RENDER CART ──
     function renderCart() {
       const container = document.getElementById("cart-items");
       const checkoutBtn = document.getElementById("checkout-btn");
-
       if (cart.length === 0) {
         container.innerHTML = `<div class="cart-empty"><div class="emoji">🛒</div>Your cart is empty.<br>Add some goodies for your pup!</div>`;
         checkoutBtn.disabled = true;
@@ -382,7 +327,6 @@
         `).join("");
         checkoutBtn.disabled = false;
       }
-
       const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
       document.getElementById("cart-total").textContent = `$${total.toFixed(2)}`;
     }
@@ -392,7 +336,6 @@
       document.getElementById("cart-count").textContent = count;
     }
 
-    // ── DRAWER OPEN/CLOSE ──
     function openCart() {
       document.getElementById("cart-drawer").classList.add("open");
       document.getElementById("cart-overlay").classList.add("open");
@@ -404,7 +347,6 @@
       document.getElementById("checkout-btn").textContent = "Checkout";
     }
 
-    // ── TOAST ──
     let toastTimer;
     function showToast() {
       const toast = document.getElementById("toast");
@@ -413,31 +355,21 @@
       toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
     }
 
-    // ── CHECKOUT ──
     function handleCheckout() {
       const form = document.getElementById("checkout-form");
       const btn = document.getElementById("checkout-btn");
-
-      // First click reveals the form
       if (!form.classList.contains("show")) {
         form.classList.add("show");
         btn.textContent = "Place Order";
         return;
       }
-
-      // Second click submits
       const name = document.getElementById("co-name").value;
       const email = document.getElementById("co-email").value;
       const phone = document.getElementById("co-phone").value;
-
-      if (!name || !email) {
-        alert("Please enter your name and email.");
-        return;
-      }
+      if (!name || !email) { alert("Please enter your name and email."); return; }
 
       const orderSummary = cart.map(i => `${i.qty}x ${i.name}`).join(", ");
       const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-
       const orderData = {
         dogName: "SHOP ORDER",
         ownerName: name,
@@ -456,14 +388,12 @@
         });
       }
 
-      // Clear cart + confirm
       cart = [];
       saveCart();
       closeCart();
       setTimeout(() => alert(`Thanks ${name}! Your order for $${total.toFixed(2)} has been placed. We'll email you a confirmation shortly. 🐾`), 300);
     }
 
-    // ── INIT ──
     renderProducts();
     renderCart();
     updateCount();
